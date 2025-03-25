@@ -54,9 +54,7 @@ function getPromiseResult(source) {
  * [Promise.reject(1), Promise.reject(2), Promise.reject(3)]    => Promise rejected
  */
 function getFirstResolvedPromiseResult(promises) {
-  return Promise.race(promises)
-    .then((value) => Promise.resolve(value))
-    .catch(() => Promise.reject());
+  return Promise.race(promises);
 }
 
 /**
